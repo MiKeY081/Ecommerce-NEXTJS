@@ -1,7 +1,9 @@
+"use client";
+
 import { ShoppingCart, Sun, Moon, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useCart } from '@/contexts/CartContext';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useCart } from '@/context/CartContext';
+import { useTheme } from '@/context/ThemeContext';
 import { motion } from 'framer-motion';
 
 interface HeaderProps {

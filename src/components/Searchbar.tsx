@@ -1,22 +1,31 @@
-import { Card } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
+"use client";
 
-export const ProductSkeleton = () => {
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+
+interface SearchbarProps {
+  onSearch: (query: string) => void;
+}
+
+export const Searchbar = ({ onSearch }: SearchbarProps) => {
+  const [query, setQuery] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSearch(query);
+  };
+
   return (
-    <Card className="overflow-hidden border-border bg-card">
-      <Skeleton className="aspect-square w-full" />
-      <div className="p-4 space-y-3">
-        <div>
-          <Skeleton className="h-5 w-3/4" />
-          <Skeleton className="h-3 w-1/4 mt-2" />
-        </div>
-        <Skeleton className="h-10 w-full" />
-        <Skeleton className="h-4 w-1/3" />
-        <div className="flex items-center justify-between">
-          <Skeleton className="h-8 w-20" />
-          <Skeleton className="h-9 w-24" />
-        </div>
-      </div>
-    </Card>
+    <form onSubmit={handleSubmit} className="flex w-full max-w-lg gap-2">
+      <input
+        value={query}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
+        placeholder="Search products..."
+        className="flex-1 rounded-md border border-border bg-input px-3 py-2"
+      />
+      <Button type="submit" className="bg-gradient-to-r from-primary to-accent">
+        Search
+      </Button>
+    </form>
   );
 };

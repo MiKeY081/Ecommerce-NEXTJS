@@ -1,12 +1,14 @@
+"use client";
+
 import { useState } from 'react';
 import { Header } from '@/components/Header';
-import { SearchBar } from '@/components/SearchBar';
+import { Searchbar } from '@/components/Searchbar';
 import { CategoryFilter } from '@/components/CategoryFilter';
 import { SortDropdown, SortOption } from '@/components/SortDropdown';
 import { ProductGrid } from '@/components/ProductGrid';
 import { CartSidebar } from '@/components/CartSidebar';
-import { CartProvider } from '@/contexts/CartContext';
-import { ThemeProvider } from '@/contexts/ThemeContext';
+import { CartProvider } from '@/context/CartContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -36,7 +38,7 @@ const Home = () => {
             </motion.div>
 
             <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <SearchBar onSearch={setSearchQuery} />
+              <Searchbar onSearch={setSearchQuery} />
               <div className="flex flex-wrap gap-2">
                 <CategoryFilter onCategoryChange={setCategory} />
                 <SortDropdown onSortChange={setSortBy} />

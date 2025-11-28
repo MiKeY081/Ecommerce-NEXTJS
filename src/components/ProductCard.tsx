@@ -1,7 +1,9 @@
+"use client";
+
 import { Star, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/context/CartContext';
 import { Product } from '@/lib/api';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
