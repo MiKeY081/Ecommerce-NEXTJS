@@ -79,7 +79,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
             <Button
               onClick={handleAddToCart}
               size="sm"
-              className="gap-2 bg-gradient-to-r from-primary to-accent hover:opacity-90"
+              className="gap-2 bg-indigo-600 hover:indigo-700 hover:opacity-90"
             >
               <ShoppingCart className="h-4 w-4" />
               Add

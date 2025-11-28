@@ -23,8 +23,8 @@ export const Header = ({ onCartClick }: HeaderProps) => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <Package className="h-6 w-6 text-primary" />
-          <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            ShopHub
+          <h1 className="text-xl font-bold   ">
+            Nepasys
           </h1>
         </div>
 

@@ -1,6 +1,12 @@
 "use client";
 
-import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from './ui/select';
 
 interface CategoryFilterProps {
   onCategoryChange: (category: string) => void;
@@ -19,17 +25,18 @@ export const CategoryFilter = ({ onCategoryChange }: CategoryFilterProps) => {
 
   return (
     <div className="flex flex-wrap gap-2">
-        
-      {categories.map((cat) => (
-        <Button
-          key={cat}
-          variant="outline"
-          size="sm"
-          onClick={() => onCategoryChange(cat)}
-        >
-          {cat === 'all' ? 'All' : cat}
-        </Button>
-      ))}
+      <Select onValueChange={(value) => onCategoryChange(value)}>
+        <SelectTrigger className="w-[180px] bg-card border-border">
+          <SelectValue placeholder="Category" />
+        </SelectTrigger>
+        <SelectContent className="bg-popover">
+          {categories.map((cat) => (
+            <SelectItem key={cat} value={cat}>
+              {cat === 'all' ? 'All' : cat}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 };

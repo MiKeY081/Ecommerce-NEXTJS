@@ -16,14 +16,14 @@ export const Searchbar = ({ onSearch }: SearchbarProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full max-w-lg gap-2">
+    <form onSubmit={handleSubmit} className="flex w-full max-w-xl gap-8">
       <input
         value={query}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
         placeholder="Search products..."
         className="flex-1 rounded-md border border-border bg-input px-3 py-2"
       />
-      <Button type="submit" className="bg-gradient-to-r from-primary to-accent">
+      <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700">
         Search
       </Button>
     </form>
