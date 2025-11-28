@@ -30,11 +30,13 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
     >
       <Card className="group overflow-hidden border-border bg-card transition-shadow hover:shadow-lg">
         <div className="relative aspect-square overflow-hidden bg-secondary">
-          <img
-            src={product.thumbnail}
-            alt={product.title}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
+          <a href={`/product/${product.id}`}>
+            <img
+              src={product.thumbnail}
+              alt={product.title}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </a>
           {product.discountPercentage > 0 && (
             <div className="absolute right-2 top-2 rounded-full bg-destructive px-2 py-1 text-xs font-bold text-destructive-foreground">
               -{Math.round(product.discountPercentage)}%
