@@ -69,7 +69,7 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
                         <div>
                           <h4 className="font-medium line-clamp-1">{item.title}</h4>
                           <p className="text-sm font-bold text-primary">
-                            ${item.price.toFixed(2)}
+                            ${item.price?.toFixed(2)}
                           </p>
                         </div>
 

@@ -18,7 +18,7 @@ export const ProductGrid = ({ searchQuery, category, sortBy }: ProductGridProps)
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [skip, setSkip] = useState(0);
-  const observerRef = useRef<IntersectionObserver>();
+  const observerRef = useRef<IntersectionObserver | null>(null);
   const lastProductRef = useRef<HTMLDivElement>(null);
 
   const LIMIT = 20;

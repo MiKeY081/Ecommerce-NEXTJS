@@ -19,6 +19,7 @@ export const CategoryFilter = ({ onCategoryChange }: CategoryFilterProps) => {
 
   return (
     <div className="flex flex-wrap gap-2">
+        
       {categories.map((cat) => (
         <Button
           key={cat}
